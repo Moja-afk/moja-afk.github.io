@@ -2,33 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gucca’s Message</title>
+
   <style>
     body {
-      font-family: Georgia, "Times New Roman", serif;
-      background-color: #f9f7f4;
       margin: 0;
-      padding: 0;
-      color: #333;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f5f5f5;
+      min-height: 100vh;
     }
 
     header {
-      background-color: #2c2c2c;
-      color: white;
-      padding: 2rem;
+      padding: 4rem 1rem;
       text-align: center;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      animation: fadeDown 1.2s ease;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 2px;
     }
 
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 3rem auto;
-      padding: 0 1.5rem;
-      font-size: 1.2rem;
-      line-height: 1.6;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      animation: fadeUp 1.2s ease;
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .photo-section {
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .photo-section img {
+      max-width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    }
+
+    .audio-section {
+      margin-top: 3rem;
+    }
+
+    .audio-section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .audio-card {
+      background: rgba(255,255,255,0.1);
+      padding: 1.2rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -40,7 +109,42 @@
       thankyou tata wariko for your book. I learned so much more about my grandparents
       and it lead me to think of so many questions to ask during the last family reunion
     </p>
+
+    <!-- 📸 PHOTO SECTION -->
+    <div class="photo-section">
+      <img src="photo.jpg" alt="Family memory photo">
+      <!-- Replace photo.jpg with your image filename -->
+    </div>
+
+    <!-- 🎙️ VOICE MEMOS -->
+    <div class="audio-section">
+      <h2>Voice Memos</h2>
+
+      <div class="audio-card">
+        <audio controls>
+          <source src="memo1.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <div class="audio-card">
+        <audio controls>
+          <source src="memo2.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="audio-card">
+        <audio controls>
+          <source src="memo3.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
   </main>
+
+  <footer>
+    A family memory preserved ✨
+  </footer>
 
 </body>
 </html>
+
